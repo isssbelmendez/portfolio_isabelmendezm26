@@ -1,0 +1,484 @@
+:root {
+    --bg: #071324;
+    /* fondo oscuro */
+    --card: #0e1724;
+    --muted: #9aa6b2;
+    --accent: #ff5ca4;
+    --accent-2: #7a5cff;
+    --text: #f5f8fc;
+    --glass: rgba(255, 255, 255, 0.03);
+    --radius: 12px;
+    --max-width: 1100px;
+    --container-padding: 1rem;
+}
+
+/* Mobile-first */
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg, var(--bg), #041021 120%);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--container-padding);
+}
+
+/* Header */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    background: linear-gradient(180deg, rgba(7, 19, 36, 0.6), rgba(7, 19, 36, 0.25));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 0;
+}
+
+.logo {
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.nav-toggle {
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1.2rem;
+    display: inline-block;
+}
+
+.site-nav {
+    display: none;
+}
+
+.site-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.site-nav a {
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0.35rem 0.5rem;
+    border-radius: 8px;
+}
+
+.site-nav a:hover {
+    color: var(--text);
+    background: var(--glass);
+}
+
+/* Hero */
+.hero {
+    padding: 2rem 0 1.5rem;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.eyebrow {
+    color: var(--muted);
+    margin: 0 0 0.25rem;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1.05;
+}
+
+.accent {
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.role {
+    color: var(--muted);
+    margin: 0.5rem 0 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.55rem 0.9rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color: white;
+}
+
+.btn.ghost {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text);
+    margin-left: 0.5rem;
+}
+
+.hero-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+@media (min-width:760px) {
+    .hero-grid {
+        grid-template-columns: 1fr 350px;
+    }
+}
+
+
+.mini-list {
+    display: flex;
+    justify-content: center;
+    /* Centra la fila */
+    align-items: center;
+    flex-wrap: wrap;
+    /* Para que no se rompa en móviles */
+    gap: 0.75rem 1rem;
+    /* Espaciado más limpio */
+    margin-top: 0.8rem;
+    list-style: none;
+    padding: 0;
+}
+
+.mini-list li {
+    background: rgba(255, 255, 255, 0.06);
+    /* Pastilla con efecto */
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* ----- ABOUT SECTION IMPROVED ----- */
+
+.about {
+    padding: 2.5rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.about-grid {
+    display: grid;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.about-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text);
+    text-align: justify;
+}
+
+.about-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+    color: var(--text);
+}
+
+.about-meta dt {
+    font-weight: 700;
+    color: var(--accent-2);
+}
+
+.about-meta dd {
+    margin: 0;
+    color: var(--muted);
+}
+
+/* Efecto Hover en enlaces */
+.about-meta a {
+    color: var(--text);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.about-meta a:hover {
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--accent);
+}
+
+
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tarjetas del About */
+.about-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1rem;
+    border-radius: 10px;
+    transition: 0.35s ease;
+}
+
+/* Efecto hover */
+.about-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+}
+
+.about-card dt {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    margin-bottom: 6px;
+}
+
+.about-card dd {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+
+/* En pantallas más grandes */
+@media (min-width:760px) {
+    .about-grid {
+        display: grid;
+        gap: 1.8rem;
+        align-items: start;
+        max-width: 900px;
+        /* limita el ancho */
+        margin: 0 auto;
+        /* centra el contenido */
+        padding: 0 1rem;
+        /* agrega margen lateral */
+    }
+}
+
+/* Skills */
+.skills {
+    padding: 1.5rem 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1rem;
+    border-radius: var(--radius);
+}
+
+
+/* Portfolio */
+.portfolio {
+    padding: 1.5rem 0 2rem;
+}
+
+.projects-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1rem;
+    border-radius: var(--radius);
+}
+
+.project-card .thumb {
+    height: 120px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Contact */
+.contact {
+    padding: 2rem 0 3rem;
+}
+
+.contact-form {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 600px;
+}
+
+.contact-form label {
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: transparent;
+    color: var(--text);
+}
+
+.form-actions {
+    margin-top: 0.25rem;
+}
+
+.form-feedback {
+    color: var(--muted);
+    margin-top: 0.4rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+/* Centrar títulos de secciones */
+.portfolio h2,
+.contact h2 {
+  text-align: center;
+}
+
+/* Centrar las tarjetas del portafolio en layouts pequeños */
+.projects-grid {
+  justify-content: center;
+  text-align: center;
+}
+
+/* Centrar el contenido del formulario */
+.contact-form {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 500px;
+}
+
+/* Alinear etiquetas del formulario al centro */
+.contact-form label {
+  text-align: left;
+}
+
+/* Centrar el feedback del formulario */
+.form-feedback {
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+/* Footer */
+.site-footer {
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    color: var(--muted);
+    text-align: center;
+}
+
+/* Larger screens */
+@media (min-width:760px) {
+    .site-nav {
+        display: block;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr 340px;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .hero-image img {
+        width: 100%;
+        border-radius: 18px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 1.5rem;
+        align-items: start;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Even larger */
+@media (min-width:1100px) {
+    :root {
+        --max-width: 1200px;
+    }
+
+    h1 {
+        font-size: 2.6rem;
+    }
+}
